@@ -1,0 +1,7 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #111111;
+    min-height: 100vh; /* garante que o body tenha  a altura mínima de 100% da viewport (tela) */
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header" "main" "footer"; /* Estas propriedades (grid) definem as áreas do grid para o layout da página sendo que o header e o footer ocupam a mesma largura (auto) e o main ocupa o espaço restante */
+}
