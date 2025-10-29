@@ -1,9 +1,9 @@
-.cabecalho{
+.cabecalho {
     grid-area: header;
     padding: 1.8rem 0;
 }
 
-.cabecalho .menu-principal{
+.cabecalho .menu-principal {
     display: none;
     background-color: var(--cor-neutra-escura);
     position: absolute;
@@ -13,29 +13,29 @@
     padding: 1rem;
 }
 
-.cabecalho .menu-principal ul{
+.cabecalho .menu-principal ul {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding: 1rem 0;
 }
 
-.cabecalho .menu-principal ul li a{
+.cabecalho .menu-principal ul li a {
     color: var(--cor-neutra-clara);
     letter-spacing: 0.1rem;
     text-decoration: none;
     padding: 1rem;
 }
 
-.cabecalho .menu-principal ul li a:hover{
+.cabecalho .menu-principal ul li a:hover {
     background-color: var(--cor-primaria-hover);
 }
 
-.cabecalho.menu-ativo .menu-principal{
+.cabecalho.menu-ativo .menu-principal {
     display: block;
 }
 
-.header-conteudo{
+.header-conteudo {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,13 +43,13 @@
     padding: 0 1rem;
 }
 
-.header-esquerda{
+.header-esquerda {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.menu-hamburguer{
+.menu-hamburguer {
     width: 24px;
     height: 24px;
     background-color: transparent;
@@ -61,22 +61,22 @@
     cursor: pointer;
 }
 
-.menu-hamburguer span{
+.menu-hamburguer span {
     display: block;
     height: 3px;
     width: 100%;
-    background-color: #ffffff;
+    background-color: var(--cor-neutra-clara);
 }
 
-.botao-carrinho{
+.botao-carrinho {
     background-color: transparent;
     border: 0;
-    padding: 0,75rem;
+    padding: 0, 75rem;
     position: relative;
     cursor: pointer;
 }
 
-.botao-carrinho span{
+.botao-carrinho span {
     background-color: var(--cor-primaria);
     color: var(--cor-neutra-clara);
     font-weight: 600;
@@ -94,25 +94,25 @@
     border-radius: 50%;
 }
 
-@media(min-width: 940px){
-    
-    .cabecalho .menu-principal{
+@media(min-width: 940px) {
+
+    .cabecalho .menu-principal {
         display: block;
         position: static;
         width: auto;
     }
 
-    .cabecalho .menu-principal ul{
+    .cabecalho .menu-principal ul {
         flex-direction: row;
     }
 }
 
-@media(min-width: 1440px){
+@media(min-width: 1170px) {
 
-    .cabecalho{
-        max-width: 1440px;
+    .cabecalho {
+        max-width: 1170px;
         margin: 0 auto;
     }
-    
-  
+
+
 }

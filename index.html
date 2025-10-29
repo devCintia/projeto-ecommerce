@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/estilos.css">
         <link rel="stylesheet" href="css/cabecalho.css">
+        <link rel="stylesheet" href="css/produtos.css">
     </head>
     <body>
         <header class="cabecalho">
@@ -22,72 +23,76 @@
                         <span></span>
                         <span></span>
                     </button>
-                      
-            <a class="logo" href="/">
-                <img src="./assets/images/logo.svg"
-                    alt="E-commerce Master Logo">
-            </a>
+
+                    <a class="logo" href="/">
+                        <img src="./assets/images/logo.svg"
+                            alt="E-commerce Master Logo">
+                    </a>
                 </div>
-            <nav class="menu-principal">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#perguntas Frequentes">Perguntas
-                            Frequentes</a></li>
-                    <li><a href="#contato">Fale Conosco</a></li>
-                </ul>
-            </nav>
-            <button class="botao-carrinho" data-micromodal-trigger="modal-1">
-                <img src="./assets/images/icone_carrinho.svg"
-                    alt="Ícone do carrinho de compras"/>
+                <nav class="menu-principal">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#perguntas Frequentes">Perguntas
+                                Frequentes</a></li>
+                        <li><a href="#contato">Fale Conosco</a></li>
+                    </ul>
+                </nav>
+                <button class="botao-carrinho"
+                    data-micromodal-trigger="modal-1">
+                    <img src="./assets/images/icone_carrinho.svg"
+                        alt="Ícone do carrinho de compras" />
                     <span id="contador-carrinho">0</span>
-            </button>
+                </button>
             </div>
         </header>
         <main>
-            <section>
+            <section class="produtos">
                 <h2>Produtos</h2>
                 <ul>
-                    <li>
+                    <li class="produto" data-id="camiseta-roxa">
                         <figure>
                             <img src="./assets/images/camiseta_roxa.jpg"
                                 alt="camiseta Dev em Dobro - roxa">
                             <figcaption>Camiseta Dev em Dobro -
                                 Roxa</figcaption>
                         </figure>
-                        <div>
+                        <div class="informacoes">
                             <span>Cor: roxa</span>
                             <span>Tamanho: M</span>
-                            <span>R$ 89,00</span>
-                            <button>Adicionar ao Carrinho</button>
+                            <span class="preco">R$ 89,00</span>
+                            <button class="adicionar-ao-carrinho">Adicionar ao
+                                Carrinho</button>
                         </div>
                     </li>
-                    <li>
+                    <li class="produto" data-id="camiseta-roxa">
                         <figure>
                             <img src="./assets/images/camiseta_roxa.jpg"
                                 alt="camiseta Dev em Dobro - roxa">
                             <figcaption>Camiseta Dev em Dobro -
                                 Roxa</figcaption>
                         </figure>
-                        <div>
+                        <div class="informacoes">
                             <span>Cor: roxa</span>
                             <span>Tamanho: G</span>
-                            <span>R$ 100,00</span>
-                            <button>Adicionar ao Carrinho</button>
+                            <span class="preco">R$ 100,00</span>
+                            <button class="adicionar-ao-carrinho">Adicionar ao
+                                Carrinho</button>
                         </div>
                     </li>
-                    <li>
+                    <li class="produto" data-id="caneca-dev-em-dobro">
                         <figure>
                             <img src="./assets/images/caneca_devemdobro.jpg"
                                 alt="caneca Dev em Dobro">
                             <figcaption>Caneca Dev em Dobro</figcaption>
                         </figure>
-                        <div>
-                            <span>Cor: Branca</span>
+                        <div class="informacoes">
+                            <span><strong>Cor:</strong> Branca</span>
                             <span>Tamanho: M</span>
-                            <span>R$ 45,00</span>
-                            <button>Adicionar ao Carrinho</button>
+                            <span class="preco">R$ 45,00</span>
+                            <button class="adicionar-ao-carrinho">Adicionar ao
+                                Carrinho</button>
                         </div>
                     </li>
                 </ul>
