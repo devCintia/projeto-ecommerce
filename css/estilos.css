@@ -1,4 +1,4 @@
-:root{
+:root {
     --cor-neutra-escura: #111111;
     --cor-neutra-clara: #ffffff;
     --cor-primaria-hover: #834de8;
@@ -10,12 +10,14 @@
 
 
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--cor-neutra-escura);
     color: #333;
-    min-height: 100vh; /* garante que o body tenha  a altura mínima de 100% da viewport (tela) */
+    min-height: 100vh;
+    /* garante que o body tenha  a altura mínima de 100% da viewport (tela) */
     display: grid;
     grid-template-rows: auto 1fr auto;
-    grid-template-areas: "header" "main" "footer"; /* Estas propriedades (grid) definem as áreas do grid para o layout da página sendo que o header e o footer ocupam a mesma largura (auto) e o main ocupa o espaço restante */
+    grid-template-areas: "header" "main" "footer";
+    /* Estas propriedades (grid) definem as áreas do grid para o layout da página sendo que o header e o footer ocupam a mesma largura (auto) e o main ocupa o espaço restante */
 }
