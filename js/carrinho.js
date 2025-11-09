@@ -11,41 +11,51 @@ const botaoAdicionar = document.querySelectorAll('.adicionar-ao-carrinho');
 const contadorCarrinho = document.getElementById('contador-carrinho');
 
 botaoAdicionar.forEach(botao => {
-    botao.addEventListener('click', () => {
+    botao.addEventListener('click', (evento) => {
         // Passo 2 - Atualizar o contador
-        let quantidade = parseInt(contadorCarrinho.textContent) || 0;
-        contadorCarrinho.textContent = quantidade + 1;
+        // let quantidade = parseInt(contadorCarrinho.textContent) || 0;
+        // contadorCarrinho.textContent = quantidade + 1;
 
         // Passo 3 - Adicionar o produto no localStorage
-        const produto = botao.closest('.produto');
-        const id = produto.dataset.id;
-        const nome = produto.querySelector('figcaption').textContent;
-        const imagem = produto.querySelector('img').getAttribute('src');
-        const preco = parseFloat(produto.querySelector('.preco').textContent.replace('R$ ', '').replace(".","").replace(',', '.'));        
-        const tamanho = produto.querySelector('.informacoes span:nth-child(2)').textContent;
+        const elementoProduto = evento.target.closest('.produto');
+        const id = elementoProduto.dataset.id;
+        const nomeElemento = elementoProduto.querySelector('figcaption');
+        const nome = nomeElemento ? nomeElemento.textContent : '';
+        const imagem = elementoProduto.querySelector('img').getAttribute('src');
+        const preco = parseFloat(elementoProduto.querySelector('.preco').textContent.replace('R$ ', '').replace(".", "").replace(',', '.'));
+        // const tamanho = elementoProduto.querySelector('.informacoes span:nth-child(2)').textContent;
 
-        const itemCarrinho = {
-            id,
-            nome,
-            imagem,
-            preco,
-            tamanho,
-            quantidade: 1
-        };
-
-        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-        const index = carrinho.findIndex(item => item.id === id);
-        if (index > -1) {
-            carrinho[index].quantidade++;
+        //buscar a lista de produtos no localStorage
+        const carrinho = obterProdutosDoCarrinho();
+        //verificar se o produto já existe no carrinho
+            const produtoExistente = carrinho.find(produto => produto.id === id);
+        if (produtoExistente) {
+            produtoExistente.quantidade++;
         } else {
-            carrinho.push(itemCarrinho);
+            const produto = {
+                id,
+                nome,
+                imagem,
+                preco,
+                quantidade: 1
+            };
+            carrinho.push(produto);
         }
-        localStorage.setItem('carrinho', JSON.stringify(carrinho));
-
-        // Passo 4 - Atualizar a tabela HTML do carrinho
-        atualizarTabelaCarrinho();
+        salvarProdutosNoCarrinho(carrinho);
     });
 });
+
+function salvarProdutosNoCarrinho(carrinho) {
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+function obterProdutosDoCarrinho() {
+    const produtos = localStorage.getItem('carrinho');
+    return produtos ? JSON.parse(produtos) : [];
+
+}
+
+
 
 // Objetivo 2 - remover produtos do carrinho:
 //     - ouvir o botão de deletar
