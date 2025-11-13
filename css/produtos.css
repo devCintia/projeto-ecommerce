@@ -85,11 +85,12 @@ main .informacoes .adicionar-ao-carrinho {
     letter-spacing: 0.1rem;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-}   
+}
 
 main .informacoes .adicionar-ao-carrinho:hover {
     background-color: var(--cor-primaria-hover);
-}   
+}
+
 @media (min-width: 769px) {
     main .produtos ul {
         flex-direction: row;
@@ -103,7 +104,7 @@ main .informacoes .adicionar-ao-carrinho:hover {
 }
 
 @media (min-width: 1170px) {
-    main section{
+    main section {
         max-width: 1170px;
         margin: 0 auto;
     }
